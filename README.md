@@ -1,1 +1,1 @@
-# resistor-color-calculator
+# RESISTOR COLOR CALCULATOR APP
