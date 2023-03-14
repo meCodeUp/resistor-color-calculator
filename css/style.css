@@ -1,0 +1,156 @@
+/* Farbcode Web-App - Version 1.0.0 - Copyright © 2022 by Andersen Art Visual - All rights reserved */
+body {
+  margin: auto;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+}
+#wrap {
+  width: 325px;
+  margin: 10px auto;
+}
+form {
+  width: 100%;
+}
+fieldset {
+  margin-bottom: 15px;
+  border: 0;
+  padding: 0;
+}
+legend {
+  font-weight: bold;
+  background-color: #ccc;
+}
+label,
+.btn_ {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+}
+legend,
+label,
+.text {
+  padding-left: 10px;
+  width: 315px;
+}
+input {
+  width: 320px;
+}
+.input {
+  background-color: #ffead5;
+  padding: 5px 0;
+  width: 100%;
+}
+.output {
+  background-color: #e9e9e9;
+  padding: 5px 0;
+  width: 100%;
+}
+.output.text {
+  border: 0;
+  background-color: #e9e9e9;
+  border-bottom: 1px dotted #666;
+}
+#r1,
+#r2,
+#r3,
+#r4 {
+  float: left;
+  height: 47px;
+  width: 28px;
+  margin: 10px 5px 0 10px;
+  border-top: #000 solid 1px;
+  border-top: #000 solid 1px;
+  border-bottom: #000 solid 1px;
+}
+#r4 {
+  margin: 5px 0 0 50px;
+  height: 56px;
+}
+#errorMsg {
+  color: #f00;
+  font-size: 12px;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+#colorCode {
+  width: 250px;
+  height: 135px;
+  padding: 7px 0 15px 75px;
+  background: url(../images/wiederstand_blank.gif) no-repeat left top;
+}
+#version {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  padding: 10px 5px;
+}
+#version a:link {
+  color: #000;
+  text-decoration: none;
+}
+@media only screen and (max-width: 480px) {
+  body,
+  #wrap {
+    margin: auto;
+  }
+  #colorCode {
+    background: url(../images/wiederstand_blank.png) no-repeat center 2px;
+    margin: auto;
+    padding: 0 0 0 65px;
+  }
+  #r1,
+  #r2,
+  #r3 {
+    height: 46px;
+  }
+  #r4 {
+    height: 56px;
+    margin-left: 55px;
+  }
+  .btn_ {
+    width: 43%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: 0;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  legend,
+  label {
+    padding: 2px 1.5625%;
+    width: 97.185%;
+  }
+  input {
+    width: 94.375%;
+    margin: 2px 1.5625%;
+  }
+  .input {
+    margin: 0;
+    padding: 0;
+  }
+  .output {
+    margin: 0;
+    padding: 0;
+  }
+  form,
+  fieldse {
+    margin: 0;
+    padding: 0;
+  }
+}
+header {
+  width: 100%;
+  color: #fff;
+  background: #1d66ca;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12),
+    0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+header h1 {
+  text-align: center;
+  margin-top: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}

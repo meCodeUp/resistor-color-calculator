@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Farbcode Web-App - Version 1.0.0 - Copyright © 2022 by Andersen Art Visual - All rights reserved  -->
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Farbcode-Widerstandsrechner | Web App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" sizes="192x192" href="images/icons/icon-192.png">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="canonical" href="https://apps.andersen-art-visual.ch/widerstandsrechner">
+    <meta name="description"
+        content="Mit den App kann man mit den Werten aus Strom (I) und Spannung (U) wird den Widerstandswert (R) berechnet. Der dazugehörigen Farbcode dargestellt. Bereich von 10 – 10000 Ohm">
+    <meta name="application-name" content="Farbcode-Widerstandsrechner">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#1d66ca">
+    <meta name="publisher" content="Andersen Art Visual">
+    <meta name="author" content="Christina Andersen">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-startup-image" href="startup.png">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="resource" type="application/l10n" href="./locales/locales.ini">
+</head>
+
+<body>
+    <header>
+        <h1>Widerstandsrechner</h1>
+    </header>
+    <main id="wrap">
+        <section id="colorCode">
+            <div id="r1"> </div>
+            <div id="r2"> </div>
+            <div id="r3"> </div>
+            <div id="r4"> </div>
+        </section>
+        <section>
+            <form action="#" method="post" accept-charset="utf-8">
+                <fieldset class="output">
+                    <legend data-l10n-id="ausgabe">Ausgabe</legend>
+                    <label data-l10n-id="ohm">Ohm <em data-l10n-id="gerundent">(Auf 2 Dezimalstellen genau)</em></label>
+                    <input class="feld" name="R" type="text" id="R" readonly>
+                    <label data-l10n-id="ohm">Ohm <em data-l10n-id="ohminfo">(Nächster höherer Wert - E12)</em></label>
+                    <input class="feld" name="R2" type="text" id="R2" readonly>
+                    <label data-l10n-id="watt">Watt <em data-l10n-id="gerundent">(Auf 2 Dezimalstellen
+                            genau)</em></label>
+                    <input class="feld" name="P" type="text" id="P" readonly>
+                </fieldset>
+                <fieldset class="input">
+                    <legend data-l10n-id="eingabe">Eingabe</legend>
+                    <label data-l10n-id="spannung" for="U">Spannung (Volt)</label>
+                    <input name="U" type="number" id="U" tabindex="10" accesskey="u" class="feld">
+                    <label data-l10n-id="strom" for="I">Strom (Ampere)</label>
+                    <input name="I" type="number" id="I" tabindex="20" accesskey="i" class="feld">
+                </fieldset>
+                <fieldset>
+                    <input type="button" name="calc" id="calc" value="Berechnen" class="btn_ left" tabindex="100"
+                        accesskey="c" data-l10n-id="berechnen">
+                    <input type="reset" name="clear" id="clear" value="Löschen" class="btn_ right" tabindex="200"
+                        accesskey="r" data-l10n-id="loeschen">
+                </fieldset>
+            </form>
+            <div id="errorMsg" class="clear"></div>
+        </section>
+    </main>
+    <footer id="version">
+        <p>Copyright © 2022 by <a href="http://andersen-art-visual.ch/" target="_blank">Andersen Art
+                Visual</a> - 1.0.0 </p>
+    </footer>
+    <script defer src="js/l10n.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('sw.js')
+    }
+    </script>
+</body>
+
+</html>
