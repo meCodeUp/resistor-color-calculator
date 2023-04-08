@@ -81,6 +81,8 @@ input {
   font-family: "Courier New", Courier, monospace;
   font-size: 9px;
   padding: 10px 5px;
+  margin: 10px auto;
+  width: 325px;
 }
 #version a:link {
   color: #000;
