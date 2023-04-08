@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "io.github.mecodeup.twa",
+                     "sha256_cert_fingerprints": ["98:09:9E:0E:97:3A:EF:38:AC:BB:0A:8C:C0:49:6F:89:ED:B7:F9:9E:51:58:D7:C6:17:AB:A0:32:6B:AA:CA:F8"] }
+      }
+]
