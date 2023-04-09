@@ -41,26 +41,24 @@
                 <fieldset class="output">
                     <legend data-l10n-id="ausgabe">Ausgabe</legend>
                     <label data-l10n-id="ohm">Ohm <em data-l10n-id="gerundent">(Auf 2 Dezimalstellen genau)</em></label>
-                    <input class="feld" name="R" type="text" id="R" readonly>
+                    <input class="feld" name="R" type="text" id="R" tabindex="-1" readonly>
                     <label data-l10n-id="ohm">Ohm <em data-l10n-id="ohminfo">(Nächster höherer Wert - E12)</em></label>
-                    <input class="feld" name="R2" type="text" id="R2" readonly>
+                    <input class="feld" name="R2" type="text" id="R2" tabindex="-1" readonly>
                     <label data-l10n-id="watt">Watt <em data-l10n-id="gerundent">(Auf 2 Dezimalstellen
                             genau)</em></label>
-                    <input class="feld" name="P" type="text" id="P" readonly>
+                    <input class="feld" name="P" type="text" id="P" tabindex="-1"readonly>
                 </fieldset>
                 <fieldset class="input">
                     <legend data-l10n-id="eingabe">Eingabe</legend>
                     <label data-l10n-id="spannung" for="U">Spannung (Volt)</label>
-                    <input name="U" type="number" id="U" tabindex="10" accesskey="u" class="feld">
+                    <input name="U" type="number" id="U" tabindex="0" accesskey="u" class="feld">
                     <label data-l10n-id="strom" for="I">Strom (Ampere)</label>
-                    <input name="I" type="number" id="I" tabindex="20" accesskey="i" class="feld">
+                    <input name="I" type="number" id="I" tabindex="0" accesskey="i" class="feld">
                 </fieldset>
                 <fieldset>
-                    <label for="calc"></label>
-                    <input type="button" name="calc" id="calc" value="Berechnen" class="btn_ left" tabindex="100"
+                    <input type="button" name="calc" id="calc" value="Berechnen" class="btn_ left" tabindex="0"
                         accesskey="c" data-l10n-id="berechnen">
-                    <label for="clear"></label>
-                    <input type="reset" name="clear" id="clear" value="Löschen" class="btn_ right" tabindex="200"
+                    <input type="reset" name="clear" id="clear" value="Löschen" class="btn_ right" tabindex="0"
                         accesskey="r" data-l10n-id="loeschen">
                 </fieldset>
             </form>
