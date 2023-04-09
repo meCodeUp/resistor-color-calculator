@@ -72,8 +72,8 @@
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
     <script>
-      if (typeof navigator.serviceWorker !== 'undefined') {
-        navigator.serviceWorker.register('pwabuilder-sw.js')
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/pwabuilder-sw.js')
     }
     </script>
 </body>
