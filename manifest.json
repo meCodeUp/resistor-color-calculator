@@ -56,7 +56,7 @@
   "display": "standalone",
   "description": "Mit den App kann man mit den Werten aus Strom (I) und Spannung (U) wird den Widerstandswert (R) berechnet. Der dazugehörigen Farbcode dargestellt. Bereich von 10 – 10000 Ohm",
   "lang": "de",
-  "scope": "https://apps.andersen-art-visual.ch/widerstandsrechner/",
+  "scope": "https://mecodeup.github.io/resistor-color-calculator/",
   "categories": [
     "education",
     "productivity",
