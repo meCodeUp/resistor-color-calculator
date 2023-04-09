@@ -94,18 +94,19 @@ input {
     margin: auto;
   }
   #colorCode {
-    background: url(../images/wiederstand_blank.png) no-repeat center 2px;
+    background: url(../images/wiederstand_blank.gif) no-repeat center 2px;
     margin: auto;
     padding: 0 0 0 65px;
   }
   #r1,
   #r2,
   #r3 {
-    height: 46px;
+    height: 47px;
+    margin: 19px 5px 0 10px;
   }
   #r4 {
     height: 56px;
-    margin-left: 55px;
+    margin: 14px 0 0 55px;
   }
   .btn_ {
     width: 43%;
