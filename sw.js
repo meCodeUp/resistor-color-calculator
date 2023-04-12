@@ -8,12 +8,12 @@ const resourcesToPrecash = [
 ];
 
 
-self.addEventListener ('install'. event => {
-	console. log('Service worker install event!');
+self.addEventListener ('install', event => {
+	console.log('Service worker install event!');
 		event.waitUntil(
-			caches.open (cacheName)
+			caches.open(cacheName)
 			.then (cache => {
-				return cache.addAll (resourcesToPrecache);
+				return cache.addAll(resourcesToPrecache);
 		})
 	);
 });
