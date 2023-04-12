@@ -1,4 +1,4 @@
-const cashName = 'cash-v1'
+const cacheName = 'cash-v1'
 const resourcesToPrecash = [
 	'/',
 	'index.html',
