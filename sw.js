@@ -3,6 +3,7 @@ const resourcesToPrecache = [
 	'/',
 	'index.html',
 	'images/wiederstands_blank.gif',
+	'css/style.css',
 	'js/script.js',
 	'js/functions.js',
 ];
