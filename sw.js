@@ -3,7 +3,7 @@ const resourcesToPrecash = [
 	'/',
 	'index.html',
 	'images/wiederstands_blank.gif',
-	'js/script.js'
+	'js/script.js',
 	'js/functions.js',
 ];
 
