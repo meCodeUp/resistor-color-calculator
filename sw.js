@@ -1,5 +1,5 @@
 const cacheName = 'cash-v1'
-const resourcesToPrecash = [
+const resourcesToPrecache = [
 	'/',
 	'index.html',
 	'images/wiederstands_blank.gif',
