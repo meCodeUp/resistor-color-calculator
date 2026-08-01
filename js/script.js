@@ -15,6 +15,7 @@ function paintBand(id, cssColor, nameKey) {
   el.setAttribute("role", "img");
   el.title = label;
   el.setAttribute("aria-label", label);
+  return label;
 }
 
 document.getElementById("calc").onclick = function () {
@@ -72,10 +73,17 @@ document.getElementById("calc").onclick = function () {
     document.getElementById("R").value = R.toFixed(2);
     document.getElementById("R2").value = R2;
     document.getElementById("P").value = P.toFixed(2);
-    paintBand("r1", c[0], colorName[Number(R2[0])]);
-    paintBand("r2", c[1], colorName[Number(R2[1])]);
-    paintBand("r3", color[E], colorName[E]);
-    paintBand("r4", "gold", "gold");
+    const l1 = paintBand("r1", c[0], colorName[Number(R2[0])]);
+    const l2 = paintBand("r2", c[1], colorName[Number(R2[1])]);
+    const l3 = paintBand("r3", color[E], colorName[E]);
+    const l4 = paintBand("r4", "gold", "gold");
+    // Readable colour code, e.g. "braun · rot · braun · gold".
+    document.getElementById("colorText").value = [l1, l2, l3, l4].join(" · ");
+    // Tolerance range for the gold band (±5 %), based on the E12 nominal.
+    const nominal = Number(R2);
+    const low = Number((nominal * 0.95).toFixed(2));
+    const high = Number((nominal * 1.05).toFixed(2));
+    document.getElementById("tol").value = low + " – " + high + " Ω";
   }
 };
 document.getElementById("clear").onclick = function () {

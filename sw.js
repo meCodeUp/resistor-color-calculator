@@ -1,5 +1,5 @@
 /* SERVICE WORKER FOR RESISTOR COLOR CALCULATOR APP - GNU GENERAL PUBLIC LICENSE */
-const CACHE_NAME = 'resistor-cache-v9';
+const CACHE_NAME = 'resistor-cache-v10';
 
 /* Paths are relative to the service worker scope (/resistor-color-calculator/)
    so they resolve correctly both locally and on GitHub Pages. */
