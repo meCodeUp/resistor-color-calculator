@@ -16,7 +16,7 @@ document.getElementById("calc").onclick = function () {
   const E12 = [
     10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82, 100, 120, 150, 180, 220,
     270, 330, 390, 470, 560, 680, 820, 1000, 1200, 1500, 1800, 2200, 2700, 3300,
-    4700, 5600, 6800, 8200, 10000,
+    3900, 4700, 5600, 6800, 8200, 10000,
   ];
   U = document.getElementById("U").value;
   I = document.getElementById("I").value;
@@ -25,12 +25,18 @@ document.getElementById("calc").onclick = function () {
     P = calcWatt(U, I);
     R = calcOhm(U, I);
     let z = 0;
-    while (z < E12[z]) {
+    while (z < E12.length) {
       if (E12[z] >= R) {
         R2 = E12[z];
         break;
       }
       z++;
+    }
+    if (R2 === undefined) {
+      document.getElementById("errorMsg").innerHTML =
+        document.webL10n.get("outofrange") ||
+        "Value out of range (10 – 10000 Ohm)!";
+      return;
     }
     R2 = R2.toString();
     ziffern = R2.length;
