@@ -48,6 +48,12 @@
       "src": "images/512x512.png",
       "type": "image/png",
       "sizes": "any"
+    },
+    {
+      "src": "images/maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "background_color": "#1d66ca",
