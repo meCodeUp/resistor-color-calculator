@@ -11,7 +11,15 @@ A lightweight, installable **Progressive Web App** that calculates the resistanc
   - Nearest higher **E12** value
   - Power **P** (`U · I`) in watts
 - **4-band color code** rendered visually for the E12 value
-- **Installable PWA** — add to home screen, runs standalone
+- **Readable color code** — the bands are also shown as localized text
+  (e.g. `brown · red · brown · gold`) in a copyable field
+- **Tolerance range** — the ±5 % range for the E12 value (e.g. `114 – 126 Ω`)
+- **Accessible** — each band exposes its color name as `aria-label` + tooltip
+  for screen readers and color-blind users
+- **Input validation** — empty, non-numeric or non-positive values are rejected
+  with a clear, localized message
+- **Installable PWA** — add to home screen, runs standalone, with a maskable
+  Android icon and a 180×180 iOS touch icon
 - **Offline support** — full app shell and assets are cached by the service worker
 - **Multilingual** — German, English, French, Italian, Spanish, Portuguese (via [webL10n](https://github.com/fabi1cazenave/webL10n))
 - **No build step, no dependencies** — plain HTML, CSS and vanilla JavaScript
@@ -33,14 +41,14 @@ Digit → color mapping: black `0`, brown `1`, red `2`, orange `3`, yellow `4`, 
 
 ## Run locally
 
-Because the service worker registers under the `/resistor-color-calculator/` path, serve the folder from its **parent** directory:
+The service worker registers with a relative path, so you can serve the repo folder directly:
 
 ```bash
-# from the directory that contains the repo folder
+# from inside the repo folder
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000/resistor-color-calculator/.
+Then open http://localhost:8000/.
 
 ## Project structure
 
@@ -53,8 +61,12 @@ js/functions.js      Ohm/Watt math + form validation
 js/l10n.js           webL10n localization library
 locales/             Translations (de, en, fr, it, es, pt)
 sw.js                Service worker (offline cache)
-manifest.json        PWA manifest
+manifest.json        PWA manifest — also the single source of the app version
 ```
+
+The app version lives only in `manifest.json` (`"version"`); the footer reads it
+from there at runtime. To release, bump that field and the service worker
+`CACHE_NAME` in `sw.js`.
 
 ## License
 
