@@ -4,6 +4,14 @@ A lightweight, installable **Progressive Web App** that calculates the resistanc
 
 **Live demo:** https://mecodeup.github.io/resistor-color-calculator/
 
+## Screenshots
+
+| Input view | After pressing “Berechnen” |
+|:----------:|:--------------------------:|
+| <img src="images/screenshot-eingabe.png" alt="Input-only view with the blank resistor" width="300"> | <img src="images/screenshot-ergebnis.png" alt="Result view with resistance, power, color code, tolerance and the coloured resistor bands" width="300"> |
+
+On load only the inputs and a blank resistor are shown; pressing **Berechnen** reveals the results and colors the bands.
+
 ## Features
 
 - **Ohm's law calculation** — enter voltage (V) and current (A), get:
