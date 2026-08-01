@@ -1,4 +1,22 @@
-/* JS FOR RESISTOR COLOR CALCULATOR APP - VERSION 1.0.1 - GNU GENERAL PUBLIC LICENSE */
+/* JS FOR RESISTOR COLOR CALCULATOR APP - GNU GENERAL PUBLIC LICENSE */
+
+// Localizable color names, indexed like the CSS `color` array below, so each
+// band can carry a text label for screen readers and colour-blind users.
+const colorName = [
+  "black", "brown", "red", "orange", "yellow",
+  "green", "blue", "violet", "grey", "white",
+];
+
+// Paint a band and expose its colour name as an accessible label + tooltip.
+function paintBand(id, cssColor, nameKey) {
+  const el = document.getElementById(id);
+  el.style.backgroundColor = cssColor;
+  const label = document.webL10n.get("color_" + nameKey) || nameKey;
+  el.setAttribute("role", "img");
+  el.title = label;
+  el.setAttribute("aria-label", label);
+}
+
 document.getElementById("calc").onclick = function () {
   let U, I, P, R, R2, ziffern;
   const color = [
@@ -54,16 +72,18 @@ document.getElementById("calc").onclick = function () {
     document.getElementById("R").value = R.toFixed(2);
     document.getElementById("R2").value = R2;
     document.getElementById("P").value = P.toFixed(2);
-    document.getElementById("r1").style.backgroundColor = c[0];
-    document.getElementById("r2").style.backgroundColor = c[1];
-    document.getElementById("r3").style.backgroundColor = color[E];
-    document.getElementById("r4").style.backgroundColor = "gold";
+    paintBand("r1", c[0], colorName[Number(R2[0])]);
+    paintBand("r2", c[1], colorName[Number(R2[1])]);
+    paintBand("r3", color[E], colorName[E]);
+    paintBand("r4", "gold", "gold");
   }
 };
 document.getElementById("clear").onclick = function () {
-  const clearBG = "transparent";
-  document.getElementById("r1").style.backgroundColor = clearBG;
-  document.getElementById("r2").style.backgroundColor = clearBG;
-  document.getElementById("r3").style.backgroundColor = clearBG;
-  document.getElementById("r4").style.backgroundColor = clearBG;
+  ["r1", "r2", "r3", "r4"].forEach(function (id) {
+    const el = document.getElementById(id);
+    el.style.backgroundColor = "transparent";
+    el.removeAttribute("role");
+    el.removeAttribute("title");
+    el.removeAttribute("aria-label");
+  });
 };
