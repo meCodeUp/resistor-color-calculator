@@ -59,7 +59,6 @@ input {
   width: 28px;
   margin: 10px 5px 0 10px;
   border-top: #000 solid 1px;
-  border-top: #000 solid 1px;
   border-bottom: #000 solid 1px;
 }
 #r4 {
@@ -139,7 +138,7 @@ input {
     padding: 0;
   }
   form,
-  fieldse {
+  fieldset {
     margin: 0;
     padding: 0;
   }
