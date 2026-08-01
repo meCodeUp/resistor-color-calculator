@@ -12,36 +12,35 @@ function calcWatt(U, I) {
   return P;
 }
 function checkForm(V, A) {
+  // Fallback strings in case a locale is missing a key, so validation
+  // never silently passes an invalid value.
+  const fallback = {
+    entervalue: "Please enter a value!<br>",
+    enternumber: "Please enter only numbers!<br>",
+    enterpositive: "Please enter a value greater than 0!<br>",
+  };
+  function messageKey(value) {
+    if (value === "") return "entervalue";
+    const num = Number(value);
+    if (Number.isNaN(num)) return "enternumber";
+    if (num <= 0) return "enterpositive";
+    return null;
+  }
+  function translate(key) {
+    return document.webL10n.get(key) || fallback[key];
+  }
   let error = false;
-  let msg = "",
-    msgV,
-    msgA;
-  const numPat = /\d/;
-  const testV = numPat.test(V);
-  const testA = numPat.test(A);
-  if (V === "" || testV === false) {
-    if (V === "") {
-      msgV = document.webL10n.get("entervalue");
-    } else if (testV === false) {
-      msgV = document.webL10n.get("enternumber");
-    }
-    msg = document.webL10n.get("errvoltage") + msgV;
+  let msg = "";
+  const keyV = messageKey(V);
+  if (keyV) {
+    msg += document.webL10n.get("errvoltage") + translate(keyV);
     error = true;
   }
-  if (A === "" || testA === false) {
-    if (A === "") {
-      msgA = document.webL10n.get("entervalue");
-    } else if (testA === false) {
-      msgA = document.webL10n.get("enternumber");
-    }
-    msg += document.webL10n.get("errcurrent") + msgA;
+  const keyA = messageKey(A);
+  if (keyA) {
+    msg += document.webL10n.get("errcurrent") + translate(keyA);
     error = true;
   }
-  if (error) {
-    document.getElementById("errorMsg").innerHTML = msg;
-    return error;
-  } else {
-    document.getElementById("errorMsg").innerHTML = msg;
-    return error;
-  }
+  document.getElementById("errorMsg").innerHTML = msg;
+  return error;
 }
