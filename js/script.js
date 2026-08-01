@@ -1,4 +1,4 @@
-/* JS FOR RESISTOR COLOR CALCULATOR APP - VERSION 1.0.0 - GNU GENERAL PUBLIC LICENSE */
+/* JS FOR RESISTOR COLOR CALCULATOR APP - VERSION 1.0.1 - GNU GENERAL PUBLIC LICENSE */
 document.getElementById("calc").onclick = function () {
   let U, I, P, R, R2, ziffern;
   const color = [

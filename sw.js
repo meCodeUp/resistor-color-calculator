@@ -1,4 +1,4 @@
-/* SERVICE WORKER FOR RESISTOR COLOR CALCULATOR APP - VERSION 1.0.0 - GNU GENERAL PUBLIC LICENSE */
+/* SERVICE WORKER FOR RESISTOR COLOR CALCULATOR APP - VERSION 1.0.1 - GNU GENERAL PUBLIC LICENSE */
 const CACHE_NAME = 'resistor-cache-v2';
 
 /* Paths are relative to the service worker scope (/resistor-color-calculator/)
