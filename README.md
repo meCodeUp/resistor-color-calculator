@@ -10,7 +10,7 @@ A lightweight, installable **Progressive Web App** that calculates the resistanc
 |:----------:|:--------------------------:|
 | <img src="images/screenshot-eingabe.png" alt="Input-only view with the blank resistor" width="300"> | <img src="images/screenshot-ergebnis.png" alt="Result view with resistance, power, color code, tolerance and the coloured resistor bands" width="300"> |
 
-On load only the inputs and a blank resistor are shown; pressing **Berechnen** reveals the results and colors the bands.
+On load only the inputs and a blank resistor are shown; pressing **Berechnen** (“Calculate”) reveals the results and colors the bands. *The screenshots show the German UI — the app is also available in English, French, Italian, Spanish and Portuguese.*
 
 ## Features
 
