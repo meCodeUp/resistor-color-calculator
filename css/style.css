@@ -3,10 +3,16 @@ body {
   margin: auto;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 0.85em;
+  /* The fixed-size resistor graphic is ~325px; hide the few px it can bleed
+     past the viewport on very narrow (<=344px) phones. */
+  overflow-x: hidden;
 }
 #wrap {
-  width: 325px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 340px;
   margin: 10px auto;
+  padding: 0 10px;
 }
 form {
   width: 100%;
@@ -29,11 +35,15 @@ label,
 legend,
 label,
 .text {
+  box-sizing: border-box;
   padding-left: 10px;
-  width: 315px;
+  width: 100%;
 }
 input {
-  width: 320px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px; /* >= 16px keeps iOS from zooming in on focus */
 }
 .input {
   background-color: #ffead5;
@@ -77,11 +87,13 @@ input {
   background: url(../images/wiederstand_blank.gif) no-repeat left top;
 }
 #version {
+  box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
   font-size: 9px;
   padding: 10px 5px;
   margin: 10px auto;
-  width: 325px;
+  width: 100%;
+  max-width: 340px;
 }
 #version a:link {
   color: #000;
@@ -120,15 +132,7 @@ input {
   .right {
     float: right;
   }
-  legend,
-  label {
-    padding: 2px 1.5625%;
-    width: 97.185%;
-  }
-  input {
-    width: 94.375%;
-    margin: 2px 1.5625%;
-  }
+  /* Inputs and labels inherit the fluid, full-width base layout. */
   .input {
     margin: 0;
     padding: 0;
