@@ -20,8 +20,8 @@ document.getElementById("calc").onclick = function () {
   ];
   U = document.getElementById("U").value;
   I = document.getElementById("I").value;
-  const ceck = ceckForm(U, I);
-  if (!ceck) {
+  const check = checkForm(U, I);
+  if (!check) {
     P = calcWatt(U, I);
     R = calcOhm(U, I);
     let z = 0;

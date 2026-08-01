@@ -11,7 +11,7 @@ function calcWatt(U, I) {
   P = U * I;
   return P;
 }
-function ceckForm(V, A) {
+function checkForm(V, A) {
   let error = false;
   let msg = "",
     msgV,
