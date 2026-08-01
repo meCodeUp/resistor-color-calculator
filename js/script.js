@@ -18,7 +18,16 @@ function paintBand(id, cssColor, nameKey) {
   return label;
 }
 
+// Show or hide the output box. The resistor graphic stays visible at all times
+// (just without coloured bands); only the calculated values are hidden until
+// the first successful calculation, and hidden again on reset.
+function showOutput(visible) {
+  document.getElementById("outputBox").hidden = !visible;
+}
+
 document.getElementById("calc").onclick = function () {
+  // Hide any previous result until this calculation succeeds.
+  showOutput(false);
   let U, I, P, R, R2, ziffern;
   const color = [
     "black",
@@ -84,9 +93,12 @@ document.getElementById("calc").onclick = function () {
     const low = Number((nominal * 0.95).toFixed(2));
     const high = Number((nominal * 1.05).toFixed(2));
     document.getElementById("tol").value = low + " – " + high + " Ω";
+    showOutput(true);
   }
 };
 document.getElementById("clear").onclick = function () {
+  showOutput(false);
+  document.getElementById("errorMsg").innerHTML = "";
   ["r1", "r2", "r3", "r4"].forEach(function (id) {
     const el = document.getElementById(id);
     el.style.backgroundColor = "transparent";
